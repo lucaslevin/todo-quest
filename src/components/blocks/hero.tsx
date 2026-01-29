@@ -22,13 +22,13 @@ export function Hero() {
 					</p>
 				</div>
 
-				<div className="flex justify-center gap-4">
-					<Button className="rounded-full px-4 text-base" size="lg">
-						<WarningCircleIcon weight="duotone" className="size-5" /> Accept Quest
+				<div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+					<Button className="rounded-full px-4 text-base w-full sm:w-auto" size="lg">
+						<WarningCircleIcon weight="duotone" className="size-6" /> Accept Quest
 					</Button>
 
-					<Button variant="outline" className="rounded-full px-4 text-base" size="lg">
-						<GithubLogoIcon weight="duotone" className="size-5" /> Open Source
+					<Button variant="outline" className="rounded-full px-4 text-base w-full sm:w-auto" size="lg">
+						<GithubLogoIcon weight="duotone" className="size-6" /> Open Source
 					</Button>
 				</div>
 			</div>

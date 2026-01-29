@@ -84,7 +84,8 @@ export function Testimonials() {
 		<div className="flex items-center justify-center py-12">
 			<div className="h-full w-full">
 				<h2 className="px-6 text-center font-epic text-5xl tracking-[-0.02em]">From the Tavern</h2>
-				<p className="mt-3 text-center text-muted-foreground text-xl">Unverified reviews from adventurers like you</p>
+				<p className="mt-3 text-center text-muted-foreground text-lg">Tales and testimonials from fellow questers</p>
+
 				<div className="relative mt-14">
 					<div className="absolute inset-y-0 left-0 z-10 w-[15%] bg-linear-to-r from-background to-transparent" />
 					<div className="absolute inset-y-0 right-0 z-10 w-[15%] bg-linear-to-l from-background to-transparent" />

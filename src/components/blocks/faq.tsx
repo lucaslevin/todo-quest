@@ -39,7 +39,7 @@ export function FAQ() {
 							<AccordionPrimitive.Header className="flex">
 								<AccordionPrimitive.Trigger
 									className={cn(
-										'flex flex-1 items-center justify-between pt-4 pb-3 font-medium tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
+										'flex flex-1 items-center justify-between pt-4 pb-2 font-medium tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
 										'text-start text-lg',
 									)}
 								>
