@@ -1,6 +1,6 @@
-import { ListIcon, SidebarIcon } from '@phosphor-icons/react';
+import { ListIcon } from '@phosphor-icons/react';
 import React from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -16,8 +16,11 @@ export const navLinks = [
 export function AuthActions() {
 	return (
 		<div className="flex gap-4">
-			<Button className="rounded-full px-4">Sign in</Button>
-			<Button className="rounded-full px-4" variant="outline">
+			<Button size="sm" className="rounded-full px-4">
+				Sign in
+			</Button>
+
+			<Button size="sm" variant="outline" className="rounded-full px-4">
 				Create account
 			</Button>
 		</div>
@@ -29,7 +32,7 @@ export function Nav({ onNavigate, className }: { onNavigate?: () => void; classN
 		<nav className={cn('flex flex-col gap-2', className)}>
 			{navLinks.map((link) => (
 				<Link key={link.href} href={link.href} asChild>
-					<Button variant="ghost" onClick={onNavigate} className="justify-start">
+					<Button variant="ghost" className="justify-start" onClick={onNavigate}>
 						{link.name}
 					</Button>
 				</Link>
@@ -40,6 +43,12 @@ export function Nav({ onNavigate, className }: { onNavigate?: () => void; classN
 
 export function Header() {
 	const [open, setOpen] = React.useState(false);
+	const [location] = useLocation();
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Location change only
+	React.useEffect(() => {
+		setOpen(false);
+	}, [location]);
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
@@ -58,9 +67,7 @@ export function Header() {
 								<SheetTitle className="font-medium text-lg">Todo Quest</SheetTitle>
 							</SheetHeader>
 
-							<div className="p-2">
-								<Nav className="mt-6" onNavigate={() => setOpen(false)} />
-							</div>
+							<Nav className="px-2" onNavigate={() => setOpen(false)} />
 
 							<SheetFooter>
 								<AuthActions />
