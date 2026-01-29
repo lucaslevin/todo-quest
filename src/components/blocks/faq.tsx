@@ -1,4 +1,4 @@
-import { PlusIcon } from 'lucide-react';
+import { PlusIcon } from '@phosphor-icons/react';
 import { Accordion as AccordionPrimitive } from 'radix-ui';
 import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
@@ -44,7 +44,7 @@ export function FAQ() {
 									)}
 								>
 									{question}
-									<PlusIcon className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+									<PlusIcon className="size-5 shrink-0 text-muted-foreground transition-transform duration-200" />
 								</AccordionPrimitive.Trigger>
 							</AccordionPrimitive.Header>
 							<AccordionContent className="text-base text-muted-foreground h-auto ">{answer}</AccordionContent>
