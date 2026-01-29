@@ -15,7 +15,7 @@ export function Hero() {
 				</Badge>
 
 				<div className="space-y-6">
-					<h1 className="font-medium text-4xl tracking-tighter sm:text-5xl md:text-6xl md:leading-[1.2] lg:text-6xl">Turn your goals into Epic Quests</h1>
+					<h1 className="text-5xl md:text-6xl font-medium tracking-tight md:leading-tight">Turn your Goals into Epic Quests</h1>
 
 					<p className="text-foreground/80 md:text-lg">
 						Transforms your ambitions into RPG-style quests. Earn experience, level up, and make consistent progress — one quest at a time.
@@ -25,7 +25,6 @@ export function Hero() {
 				<div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
 					<Button className="rounded-full px-4 text-base w-full sm:w-auto" size="lg">
 						Get started for free
-						<ArrowUpRightIcon weight="duotone" className="size-6" />
 					</Button>
 
 					<Button variant="outline" className="rounded-full px-4 text-base w-full sm:w-auto" size="lg">

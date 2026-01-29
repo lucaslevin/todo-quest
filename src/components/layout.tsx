@@ -3,9 +3,11 @@ import { Header } from './header';
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-			<Header />
-			{children}
-		</ThemeProvider>
+		<div className="[--header-height:calc(--spacing(14))]">
+			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+				<Header />
+				{children}
+			</ThemeProvider>
+		</div>
 	);
 }
