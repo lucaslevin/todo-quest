@@ -6,7 +6,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		<div className="[--header-height:calc(--spacing(14))]">
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
 				<Header />
-				{children}
+
+				<main className="pt-(--header-height)">{children}</main>
 			</ThemeProvider>
 		</div>
 	);

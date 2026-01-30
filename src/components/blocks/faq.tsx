@@ -32,7 +32,7 @@ const faq = [
 
 export function FAQ() {
 	return (
-		<div className="flex items-center justify-center px-6 py-12">
+		<section className="flex items-center justify-center px-6 py-12">
 			<div className="w-full max-w-3xl text-center">
 				<h2 className="font-medium text-4xl leading-[1.15]! tracking-[-0.03em]">Adventurer’s Handbook</h2>
 				<p className="mt-2 text-muted-foreground text-xl">Everything you need before accepting your first quest.</p>
@@ -57,6 +57,6 @@ export function FAQ() {
 					))}
 				</Accordion>
 			</div>
-		</div>
+		</section>
 	);
 }

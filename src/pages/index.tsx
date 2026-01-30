@@ -6,12 +6,12 @@ import Testimonials from '@/components/blocks/testimonials';
 
 export function LandingPage() {
 	return (
-		<main>
+		<>
 			<Hero />
 			<Features />
 			<Testimonials />
 			<FAQ />
 			<Footer />
-		</main>
+		</>
 	);
 }

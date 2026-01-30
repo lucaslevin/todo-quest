@@ -81,7 +81,7 @@ const testimonials = [
 
 export function Testimonials() {
 	return (
-		<div className="flex items-center justify-center py-12">
+		<section className="flex items-center justify-center py-12">
 			<div className="h-full w-full">
 				<h2 className="px-6 text-center font-epic text-5xl tracking-[-0.02em]">From the Tavern</h2>
 				<p className="mt-3 text-center text-muted-foreground text-lg">Tales and testimonials from fellow questers</p>
@@ -97,7 +97,7 @@ export function Testimonials() {
 					</Marquee>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
 

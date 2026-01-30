@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ArrowUpRightIcon, GithubLogoIcon } from '@phosphor-icons/react';
+import { ArrowUpRightIcon, CircleWavyQuestionIcon, GithubLogoIcon } from '@phosphor-icons/react';
 import { motion, type Variants } from 'motion/react';
 import { Link } from 'wouter';
 import { Badge } from '@/components/ui/badge';
@@ -6,23 +6,23 @@ import { Button } from '@/components/ui/button';
 
 const container = {
 	hidden: {},
-	show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
+	show: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
 };
 
 const item: Variants = {
-	hidden: { opacity: 0, y: 12 },
-	show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
+	hidden: { opacity: 0, y: 16 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
 export function Hero() {
 	return (
-		<motion.div variants={container} initial="hidden" animate="show" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-6 py-16">
+		<motion.section variants={container} initial="hidden" animate="show" className="flex min-h-svh w-full flex-col items-center justify-center gap-16 px-6 py-16">
 			<motion.div variants={item} className="max-w-3xl space-y-10 text-center">
 				<motion.div variants={item}>
 					<Badge asChild className="rounded-full border-border p-3" variant="secondary">
 						<Link href="#">
 							Announcing Beta
-							<ArrowUpRightIcon className="ml-1 size-5" />
+							<ArrowUpRightIcon />
 						</Link>
 					</Badge>
 				</motion.div>
@@ -38,12 +38,12 @@ export function Hero() {
 				</div>
 
 				<motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-					<Button className="w-full rounded-full px-4 sm:w-auto" size="lg">
-						Start Questing
-						<ArrowRightIcon className="size-6" />
+					<Button className="w-full rounded-full p-5  sm:w-auto" size="lg">
+						<CircleWavyQuestionIcon weight="duotone" className="size-6" />
+						Accept Quest
 					</Button>
 
-					<Button variant="outline" className="w-full rounded-full px-4 sm:w-auto" size="lg">
+					<Button variant="outline" className="w-full rounded-full p-5 sm:w-auto" size="lg">
 						<GithubLogoIcon weight="duotone" className="size-6" />
 						Open Source
 					</Button>
@@ -57,6 +57,6 @@ export function Hero() {
 
 				<p className="mt-4 text-center text-sm text-muted-foreground italic">Every task is a quest — some just give better experience.</p>
 			</motion.div>
-		</motion.div>
+		</motion.section>
 	);
 }

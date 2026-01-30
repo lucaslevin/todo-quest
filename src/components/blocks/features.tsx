@@ -47,7 +47,7 @@ const item: Variants = {
 
 export function Features() {
 	return (
-		<div className="flex items-center justify-center py-12">
+		<section className="flex items-center justify-center py-12">
 			<div>
 				<h2 className="text-balance text-center font-medium tracking-tight text-3xl sm:text-4xl lg:text-5xl">Your Path to Progress</h2>
 				<p className="mx-auto mt-5 max-w-2xl text-center text-base sm:text-lg text-foreground/80 leading-relaxed">
@@ -74,6 +74,6 @@ export function Features() {
 					))}
 				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 }
