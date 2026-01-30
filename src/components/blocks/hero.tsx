@@ -33,7 +33,7 @@ export function Hero() {
 					</motion.h1>
 
 					<motion.p variants={item} className="md:text-lg text-foreground/80">
-						Transforms your ambitions into RPG-style quests. Earn experience, level up, and make consistent progress — one quest at a time.
+						Transform your ambitions into RPG-style quests. Earn experience, level up, and make consistent progress — one quest at a time.
 					</motion.p>
 				</div>
 
