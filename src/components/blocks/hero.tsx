@@ -19,9 +19,9 @@ export function Hero() {
 		<motion.div variants={container} initial="hidden" animate="show" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-6 py-16">
 			<motion.div variants={item} className="max-w-3xl space-y-10 text-center">
 				<motion.div variants={item}>
-					<Badge asChild className="rounded-full border-border p-4 text-sm" variant="secondary">
+					<Badge asChild className="rounded-full border-border p-3" variant="secondary">
 						<Link href="#">
-							Announcing Season of Future
+							Announcing Beta
 							<ArrowUpRightIcon className="ml-1 size-5" />
 						</Link>
 					</Badge>
@@ -38,20 +38,24 @@ export function Hero() {
 				</div>
 
 				<motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-					<Button className="w-full rounded-full px-6 text-base sm:w-auto" size="lg">
+					<Button className="w-full rounded-full px-4 sm:w-auto" size="lg">
 						Start Questing
 						<ArrowRightIcon className="size-6" />
 					</Button>
 
-					<Button variant="outline" className="w-full rounded-full px-6 text-base sm:w-auto" size="lg">
+					<Button variant="outline" className="w-full rounded-full px-4 sm:w-auto" size="lg">
 						<GithubLogoIcon weight="duotone" className="size-6" />
 						Open Source
 					</Button>
 				</motion.div>
 			</motion.div>
 
-			<motion.div variants={item} className="mx-auto aspect-video w-full max-w-(--breakpoint-xl) rounded-xl bg-accent">
-				<img src="https://images.pexels.com/photos/346108/pexels-photo-346108.jpeg" alt="Desert" className="h-full w-full rounded-xl object-cover" />
+			<motion.div variants={item} className="mx-auto w-full max-w-(--breakpoint-xl)">
+				<div className="aspect-video rounded-xl bg-accent overflow-hidden">
+					<img src="https://images.pexels.com/photos/346108/pexels-photo-346108.jpeg" alt="Desert" className="h-full w-full object-cover" />
+				</div>
+
+				<p className="mt-4 text-center text-sm text-muted-foreground italic">Every task is a quest — some just give better experience.</p>
 			</motion.div>
 		</motion.div>
 	);

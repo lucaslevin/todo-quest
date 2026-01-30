@@ -7,6 +7,7 @@
 		"dev": "bun --hot src/index.ts",
 		"start": "NODE_ENV=production bun src/index.ts",
 		"build": "bun run build.ts",
+		"lint": "bunx biome lint",
 		"shadcn:add": "bunx --bun shadcn@latest add --all"
 	},
 	"dependencies": {

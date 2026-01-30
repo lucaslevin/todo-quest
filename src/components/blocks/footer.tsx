@@ -1,4 +1,4 @@
-import { DribbbleLogoIcon, GithubLogoIcon, HeartIcon, SwordIcon, TwitchLogoIcon, TwitterLogoIcon } from '@phosphor-icons/react';
+import { DribbbleLogoIcon, GithubLogoIcon, SwordIcon, TwitchLogoIcon, TwitterLogoIcon } from '@phosphor-icons/react';
 import { Link } from 'wouter';
 import { Separator } from '@/components/ui/separator';
 
@@ -16,11 +16,12 @@ export function Footer() {
 		<footer>
 			<div className="mx-auto max-w-(--breakpoint-xl)">
 				<div className="flex flex-col items-center justify-start py-12">
-					<p className="flex items-center gap-2 ">
-						<SwordIcon weight="duotone" className="inline size-6" /> Battle-tested and developed in Denmark
+					<p className="flex items-center gap-2 text-sm">
+						<SwordIcon className="size-5" />
+						Quest-driven productivity, crafted in Denmark.
 					</p>
 
-					<ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm">
+					<ul className="mt-6 flex flex-wrap items-center justify-center gap-x-4 text-sm">
 						{footerLinks.map(({ title, href }) => (
 							<li key={title}>
 								<Link className="text-muted-foreground hover:text-foreground" href={href}>

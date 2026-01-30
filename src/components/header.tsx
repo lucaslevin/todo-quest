@@ -1,16 +1,18 @@
-import { ListIcon } from '@phosphor-icons/react';
+import { ListIcon, PlusIcon, StarIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { useRepoStars } from '@/hooks/use-repo-stars';
 import { cn } from '@/lib/utils';
+import { Badge } from './ui/badge';
 
 export const navLinks = [
-	{ name: 'I. Home', href: '/' },
-	{ name: 'II. Features', href: '/features' },
-	{ name: 'III. Pricing', href: '/pricing' },
-	{ name: 'IV. Blog', href: '/blog' },
-	{ name: 'V. Source', href: '/source' },
+	{ name: 'Home', href: '/' },
+	{ name: 'Features', href: '/features' },
+	{ name: 'Pricing', href: '/pricing' },
+	{ name: 'Blog', href: '/blog' },
+	{ name: 'Open Source', href: '/open-source' },
 ];
 
 export function AuthActions({ className }: { className?: string }) {
@@ -18,7 +20,9 @@ export function AuthActions({ className }: { className?: string }) {
 		<div className={cn('flex gap-4', className)}>
 			<Button>Sign in</Button>
 
-			<Button variant="outline">Create account</Button>
+			<Button variant="outline">
+				<PlusIcon /> Create account
+			</Button>
 		</div>
 	);
 }
@@ -41,6 +45,8 @@ export function Header() {
 	const [open, setOpen] = React.useState(false);
 	const [location] = useLocation();
 
+	const { stars } = useRepoStars('lucaslevin', 'todo-quest');
+
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Location change only
 	React.useEffect(() => {
 		setOpen(false);
@@ -52,7 +58,7 @@ export function Header() {
 				{/* Left */}
 				<div className="flex items-center">
 					{/* Mobile */}
-					<div className="md:hidden">
+					<div className="xl:hidden">
 						<Sheet open={open} onOpenChange={setOpen}>
 							<SheetTrigger asChild>
 								<Button variant="ghost" size="icon">
@@ -74,11 +80,18 @@ export function Header() {
 					</div>
 
 					{/* Desktop */}
-					<Nav className="hidden md:flex flex-row gap-4" />
+					<Nav className="hidden xl:flex flex-row gap-4" />
 				</div>
 
-				<div className="flex justify-center">
-					<span className="text-lg font-heading tracking-tight">Todo Quest</span>
+				<div className="flex justify-center items-center gap-3">
+					<Link to="/">
+						<span className="text-lg font-heading tracking-tight">Todo Quest</span>
+					</Link>
+
+					<Badge variant="outline" className="p-3 hidden md:inline-flex">
+						{new Intl.NumberFormat([], { notation: 'compact', compactDisplay: 'short' }).format(stars ?? 0)}
+						<StarIcon weight="duotone" />
+					</Badge>
 				</div>
 
 				{/* Right */}
