@@ -1,6 +1,5 @@
 import { FAQ } from '@/components/blocks/faq';
 import { Features } from '@/components/blocks/features';
-import { Footer } from '@/components/blocks/footer';
 import { Hero } from '@/components/blocks/hero';
 import Testimonials from '@/components/blocks/testimonials';
 
@@ -11,7 +10,6 @@ export function LandingPage() {
 			<Features />
 			<Testimonials />
 			<FAQ />
-			<Footer />
 		</>
 	);
 }

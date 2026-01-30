@@ -1,14 +1,12 @@
-import { ThemeProvider } from '@/components/theme-provider';
+import { Footer } from './blocks/footer';
 import { Header } from './header';
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="[--header-height:calc(--spacing(14))]">
-			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-				<Header />
-
-				<main className="pt-(--header-height)">{children}</main>
-			</ThemeProvider>
+			<Header />
+			<main className="pt-(--header-height)">{children}</main>
+			<Footer />
 		</div>
 	);
 }
