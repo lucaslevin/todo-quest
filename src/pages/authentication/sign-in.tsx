@@ -13,7 +13,7 @@ const authProviders = [
 
 export function SignInPage() {
 	return (
-		<div className="flex flex-col h-[calc(100svh-var(--header-height))]! items-center justify-center gap-6 p-6 md:p-10">
+		<div className="flex min-h-svh items-start md:items-center justify-center p-6 md:p-10">
 			<div className="flex w-full max-w-md flex-col gap-6">
 				<div>
 					<h2 className="text-xl">Sign in to your account</h2>

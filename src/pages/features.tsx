@@ -34,14 +34,6 @@ const features = [
 		details: 'Clear priorities and a focused view help reduce mental clutter and prevent burnout.',
 		colors: ['#FED7AA', '#FB923C', '#EA580C', '#9A3412'],
 	},
-	{
-		icon: TrophyIcon,
-		category: 'Rewards & Mastery',
-		title: 'Build mastery through consistency',
-		details:
-			'Completing quests unlocks achievements, milestones, and mastery levels. Over time, you can see what you’ve truly invested in and where you’re growing — turning consistency into visible progress.',
-		colors: ['#FDE68A', '#FACC15', '#CA8A04', '#854D0E'],
-	},
 ];
 
 function FeatureCard({ feature, featureIndex }: { feature: (typeof features)[number]; featureIndex: number }) {

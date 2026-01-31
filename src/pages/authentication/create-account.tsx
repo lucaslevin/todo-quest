@@ -13,8 +13,8 @@ const authProviders = [
 
 export function CreateAccountPage() {
 	return (
-		<div className="flex flex-col gap-4 p-6 md:p-10">
-			<div className="flex flex-1 items-center justify-center">
+		<div className="flex min-h-svh items-start md:items-center justify-center p-6 md:p-10">
+			<div className="flex w-full max-w-md flex-col gap-6">
 				<div className="w-full max-w-md">
 					<FieldGroup>
 						<div>

@@ -14,7 +14,6 @@ export const navLinks = [
 	{ name: 'Features', href: '/features' },
 	{ name: 'Pricing', href: '/pricing' },
 	{ name: 'Blog', href: '/blog' },
-	{ name: 'Open Source', href: '/open-source' },
 ];
 
 export function AuthActions({ className }: { className?: string }) {
