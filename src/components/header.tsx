@@ -23,24 +23,39 @@ export function AuthActions({ className }: { className?: string }) {
 			<ThemeToggle />
 
 			<div className="flex gap-4">
-				<Button variant="outline">Create account</Button>
+				<Link href="/create-account" asChild>
+					<Button variant="outline">Create account</Button>
+				</Link>
 
-				<Button>Sign in</Button>
+				<Link href="/sign-in" asChild>
+					<Button>Sign in</Button>
+				</Link>
 			</div>
 		</div>
 	);
 }
 
+function isActive(path: string, href: string) {
+	if (href === '/') return path === '/';
+	return path === href || path.startsWith(`${href}/`);
+}
+
 export function Nav({ onNavigate, className, buttonSize = 'default' }: { onNavigate?: () => void; className?: string; buttonSize?: 'default' | 'sm' | 'lg' }) {
+	const [location] = useLocation();
+
 	return (
 		<nav className={cn('flex flex-col gap-2', className)}>
-			{navLinks.map((link) => (
-				<Link key={link.href} href={link.href} asChild>
-					<Button variant="ghost" size={buttonSize} onClick={onNavigate} className="justify-start">
-						{link.name}
-					</Button>
-				</Link>
-			))}
+			{navLinks.map((link) => {
+				const active = isActive(location, link.href);
+
+				return (
+					<Link key={link.href} href={link.href} asChild>
+						<Button size={buttonSize} onClick={onNavigate} variant={active ? 'secondary' : 'ghost'} className="justify-start">
+							{link.name}
+						</Button>
+					</Link>
+				);
+			})}
 		</nav>
 	);
 }
@@ -51,7 +66,7 @@ export function Header() {
 
 	const { stars } = useRepoStars('lucaslevin', 'todo-quest');
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Location change only
+	// biome-ignore lint/correctness/useExhaustiveDependencies: We only want to run this on location change.
 	React.useEffect(() => {
 		setOpen(false);
 	}, [location]);
@@ -71,7 +86,7 @@ export function Header() {
 							</SheetTrigger>
 							<SheetContent side="left" className="w-72">
 								<SheetHeader>
-									<SheetTitle className="text-2xl">Todo Quest</SheetTitle>
+									<SheetTitle className="text-2xl">{process.env.BUN_PUBLIC_APP_NAME}</SheetTitle>
 								</SheetHeader>
 
 								<Nav onNavigate={() => setOpen(false)} className="px-2" buttonSize="lg" />
@@ -89,7 +104,7 @@ export function Header() {
 
 				<div className="flex justify-center items-center gap-3">
 					<Link to="/">
-						<span className="text-xl font-heading tracking-tight">Todo Quest</span>
+						<span className="text-xl font-heading tracking-tight">{process.env.BUN_PUBLIC_APP_NAME}</span>
 					</Link>
 
 					<Tooltip>

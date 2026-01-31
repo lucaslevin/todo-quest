@@ -4,23 +4,16 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const cardVariants: Variants = {
-	hidden: {
-		opacity: 0,
-		y: 24,
-	},
-	visible: (i: number) => ({
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.45, ease: 'easeOut', delay: i * 0.06 },
-	}),
+	hidden: { opacity: 0, y: 24 },
+	visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut', delay: i * 0.06 } }),
 };
 
 export function BlogPage() {
 	return (
 		<div className="flex min-h-svh items-center justify-center">
 			<div className="w-full max-w-(--breakpoint-xl) px-6 py-12">
-				<h2 className="text-pretty text-center tracking-[-0.03em] text-3xl sm:text-4xl lg:text-5xl">Blog</h2>
-				<p className="mx-auto mt-3 max-w-md text-center text-base text-muted-foreground sm:text-lg">Everything you need to turn goals into clear, achievable quests.</p>
+				<h2 className="text-pretty text-center tracking-[-0.03em] text-3xl sm:text-4xl lg:text-5xl">The Quest Log</h2>
+				<p className="mx-auto mt-3 max-w-md text-center text-base text-muted-foreground sm:text-lg">Guides, and insights to help you complete your real-world quests.</p>
 
 				<div className="flex items-end justify-between mt-8">
 					<h2 className="text-3xl tracking-tight">Posts</h2>

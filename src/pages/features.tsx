@@ -54,7 +54,7 @@ function FeatureCard({ feature, featureIndex }: { feature: (typeof features)[num
 
 	return (
 		<div ref={ref} className="flex flex-col items-center gap-x-12 gap-y-6 md:flex-row md:even:flex-row-reverse">
-			<div className="relative aspect-video w-full basis-1/2 overflow-hidden rounded-2xl border border-border/50 bg-muted">
+			<div className="relative aspect-video w-full basis-1/2 overflow-hidden rounded-2xl bg-foreground/25">
 				<div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
 					<feature.icon weight="duotone" size={100} className="text-white/80" />
 				</div>

@@ -63,7 +63,7 @@ export function Features() {
 				>
 					{features.map((feature) => (
 						<motion.div key={feature.title} variants={item} className="flex flex-col rounded-xl border px-5 py-6">
-							<div className="mb-4 flex size-12 items-center justify-center rounded-full bg-muted">
+							<div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-muted">
 								<feature.icon weight="duotone" className="size-6" />
 							</div>
 
