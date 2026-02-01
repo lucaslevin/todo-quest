@@ -71,7 +71,7 @@ export function Header() {
 	}, [location]);
 
 	return (
-		<header className="fixed inset-x-0 top-0 z-50 border-b border-border/75 bg-background/80 backdrop-blur-md">
+		<header className="fixed inset-x-0 top-0 z-50 border-b bg-background/80 backdrop-blur-md">
 			<div className="relative grid h-(--header-height) grid-cols-3 items-center px-4">
 				{/* Left */}
 				<div className="flex items-center">

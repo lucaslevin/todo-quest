@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ArrowUpRightIcon, CircleWavyQuestionIcon, GithubLogoIcon } from '@phosphor-icons/react';
+import { ArrowUpRightIcon, GithubLogoIcon } from '@phosphor-icons/react';
 import { motion, type Variants } from 'motion/react';
 import { Link } from 'wouter';
 import { Badge } from '@/components/ui/badge';
@@ -38,19 +38,18 @@ export function Hero() {
 				</div>
 
 				<motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+					<Link to="/create-account">
+						<Button className="w-full px-4 sm:w-auto" size="lg">
+							Get started for free
+						</Button>
+					</Link>
+
 					<a href="https://github.com/lucaslevin/todo-quest" target="_blank" rel="noreferrer">
-						<Button variant="outline" className="w-full sm:w-auto" size="lg">
+						<Button variant="outline" className="w-full px-4 sm:w-auto" size="lg">
 							<GithubLogoIcon weight="duotone" className="size-6" />
 							Open Source
 						</Button>
 					</a>
-
-					<Link to="/create-account">
-						<Button className="w-full sm:w-auto" size="lg">
-							Get started for free
-							<ArrowRightIcon weight="duotone" className="size-6" />
-						</Button>
-					</Link>
 				</motion.div>
 			</motion.div>
 
