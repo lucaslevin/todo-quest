@@ -2,7 +2,8 @@ import './index.css';
 
 import { useHotkeys } from '@mantine/hooks';
 import { useTheme } from 'next-themes';
-import { Route, Switch } from 'wouter';
+import { NuqsAdapter } from 'nuqs/adapters/react';
+import { Redirect, Route, Switch } from 'wouter';
 import { Spinner } from '@//components/ui/spinner';
 import { AuthLayout } from '@/components/layouts/auth-layout';
 import { HomeLayout } from '@/components/layouts/home-layout';
@@ -39,6 +40,7 @@ function Content() {
 			<AuthLayout>
 				<Switch>
 					<Route path="/" component={HomePage} />
+					<Route component={() => <Redirect to="/" />} />
 				</Switch>
 			</AuthLayout>
 		);
@@ -60,12 +62,14 @@ function Content() {
 
 export default function App() {
 	return (
-		<DirectionProvider dir="ltr">
-			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-				<Content />
-				<Toaster richColors />
-				<ScrollRestoration />
-			</ThemeProvider>
-		</DirectionProvider>
+		<NuqsAdapter>
+			<DirectionProvider dir="ltr">
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+					<Content />
+					<Toaster richColors />
+					<ScrollRestoration />
+				</ThemeProvider>
+			</DirectionProvider>
+		</NuqsAdapter>
 	);
 }
